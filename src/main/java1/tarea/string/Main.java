@@ -5,30 +5,35 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner Lector = new Scanner (System.in);
+		Scanner Entrada = new Scanner (System.in);
 		
 		int opcion = 0;
 		do {
-			System.out.println("**************************");
-			System.out.println("1. Ingresar Estudiante");
-			System.out.println("2. Buscar Estudiante");
-			System.out.println("3. SALIR");
-			System.out.println("**************************");
-			opcion = Lector.nextInt();
+			System.out.println("******************************************\r\n"
+					+ "\r\n"
+					+ "1.     Ingresar Estudiante\r\n"
+					+ "\r\n"
+					+ "2.     Buscar Estudiante\r\n"
+					+ "\r\n"
+					+ "3.     SALIR\r\n"
+					+ "\r\n"
+					+ "\r\n"
+					+ "******************************************");
+			opcion = Entrada.nextInt();
 				
 			if(opcion == 1) {
 				System.out.println("Ingrese datos del estudiante a guardar");	
 					
 				System.out.println("Ingrese el numero de cedula del estudiante 1: ");
-			    String cedula0 = Lector.nextLine();
+			    String cedula0 = Entrada.nextLine();
 			    System.out.println("Ingrese el numero de cedula del estudiante 2: ");
-			    String cedula1 = Lector.nextLine();
+			    String cedula1 = Entrada.nextLine();
 			    System.out.println("Ingrese el numero de cedula del estudiante 3: ");
-			    String cedula2 = Lector.nextLine();
+			    String cedula2 = Entrada.nextLine();
 			    System.out.println("Ingrese el numero de cedula del estudiante 4: ");
-			    String cedula3 = Lector.nextLine();
+			    String cedula3 = Entrada.nextLine();
 			    System.out.println("Ingrese el numero de cedula del estudiante 5: ");
-			    String cedula4 = Lector.nextLine();
+			    String cedula4 = Entrada.nextLine();
 			    
 			    Estudiante  e1 = new Estudiante();
 			    e1.setCedula(cedula0);
@@ -51,7 +56,7 @@ public class Main {
 			
 				System.out.println("Ingrese la cedula del estudiante a buscar : ");
 					System.out.println("Ingrese el numero de cedula del estudiante a buscar: ");
-				String cedula=Lector.nextLine();
+				String cedula=Entrada.nextLine();
 				
 				boolean resultado = estudiante[0].equals(cedula);
 				if(resultado==true) {
