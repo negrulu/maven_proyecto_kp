@@ -5,58 +5,74 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner Teclado = new Scanner (System.in);
-		
-		int opcion = 0;
-		do {
-			System.out.println("**************************");
-			System.out.println("1. Ingresar Estudiante");
-			System.out.println("2. Buscar Estudiante");
+		Scanner entrada = new Scanner(System.in);
+		Scanner entrada2 = new Scanner(System.in);
+
+		System.out.println("*************************************");
+		System.out.println("1. Ingresar estudiante");
+		System.out.println("2. Buscar estudiante");
+		System.out.println("3. SALIR");
+		System.out.println("*************************************");
+
+		int num = entrada.nextInt();
+		int numEstudiante = (-1);
+
+		Estudiante[] datosCedula = new Estudiante[5];
+
+		while (num == 1) {
+			System.out.println("Ingresar cédula del estudiante");
+			String cedula = entrada2.nextLine();
+			numEstudiante = numEstudiante + 1;
+
+			Estudiante cedulaEstudiante = new Estudiante();
+			cedulaEstudiante.setCedula(cedula);
+
+			datosCedula[numEstudiante] = cedulaEstudiante;
+
+			System.out.println("*************************************");
+			System.out.println("1. Ingresar estudiante");
+			System.out.println("2. Buscar estudiante");
 			System.out.println("3. SALIR");
-			System.out.println("**************************");
-			
-			opcion = Teclado.nextInt();
-			if(opcion == 1) {
-				
-				System.out.println("Ingrese el nro de cedula: ");
-				String cedula = Teclado.nextLine();
-				
-				Estudiante  alumno []=new Estudiante [5];
-							
-				Estudiante estudiante1 = new Estudiante();
-				estudiante1.setCedulaEstudiante(cedula);
-				
-				Estudiante estudiante2 = new Estudiante();
-				estudiante2.setCedulaEstudiante(cedula);
-				
-				Estudiante estudiante3 = new Estudiante();
-				estudiante3.setCedulaEstudiante(cedula);
-				
-				Estudiante estudiante4 = new Estudiante();
-				estudiante4.setCedulaEstudiante(cedula);
-				
-				Estudiante estudiante5 = new Estudiante();
-				estudiante5.setCedulaEstudiante(cedula);
-				
-				alumno[0] = estudiante1;
-				alumno[1] = estudiante2;
-				alumno[2] = estudiante3;
-				alumno[3] = estudiante4;
-				alumno[4] = estudiante5;
-			
-			} else if  (opcion== 2) {				
-				System.out.println("Ingrese un numero de cedula: ");
-				String cedulaIng = Teclado.next();
-								
-				for(int i=0; i<5; i++) {					
-				Estudiante estudiante = alumno[i];
-				String cedula1 = estudiante.getCedulaEstudiante();
-				
-				boolean resultado = cedulaIng.equals(cedula1); 	
-				System.out.println("El estudiante se encuentra: " + resultado);
-				
+			System.out.println("*************************************");
+
+			num = entrada.nextInt();
+
+			while (num == 2) {
+				System.out.println("Buscar cedula de estudiante");
+				String cedula2 = entrada2.nextLine();
+
+				boolean comparacion = false;
+
+				for (int i = 0; i < 5; i++) {
+					Estudiante cedulaComparar = datosCedula[i];
+					String cedula1 = cedulaComparar.getCedula();
+					boolean comparacionLocal = cedula1.equals(cedula2);
+
+					if (comparacionLocal == true) {
+						comparacion = true;
+					}
+
+				}
+				if (comparacion == true) {
+					System.out.println("*************************************");
+					System.out.println("1. Ingresar estudiante");
+					System.out.println("2. Buscar estudiante");
+					System.out.println("3. SALIR");
+					System.out.println("*************************************");
+
+				} else {
+					System.out.println("Estudiante no registrado");
+					System.out.println("*************************************");
+					System.out.println("1. Ingresar estudiante");
+					System.out.println("2. Buscar estudiante");
+					System.out.println("3. SALIR");
+					System.out.println("*************************************");
+				}
+				num = entrada.nextInt();
+				if (num == 3) {
+					System.out.println("Saliendo del sistema");
 				}
 			}
-		} while (opcion !=3);	
-	} 
+		}
+	}
 }
