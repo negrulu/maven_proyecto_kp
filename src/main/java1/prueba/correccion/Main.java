@@ -5,7 +5,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		//
 		Scanner Lector = new Scanner (System.in);
 		Scanner Lector1 = new Scanner (System.in);
 
