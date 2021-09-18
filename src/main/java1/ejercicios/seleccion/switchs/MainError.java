@@ -1,7 +1,7 @@
 package ejercicios.seleccion.switchs;
 import java.util.Scanner;
 
-public class MainSwitchs {
+public class MainError {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
