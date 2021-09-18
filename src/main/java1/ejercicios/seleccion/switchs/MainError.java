@@ -7,6 +7,7 @@ public class MainError {
 		// TODO Auto-generated method stub
 		Scanner entrada = new Scanner(System.in);
 		String opcion;
+		
 		do {
 			System.out.println("Escoja Opcion: ");
 			System.out.println("1. Realizar transferencia");
